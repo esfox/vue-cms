@@ -1,0 +1,61 @@
+:root {
+  --color-white: #f0f0f0;
+  --color-black: #454545;
+
+  --color-foreground: var(--color-black);
+  --color-foreground-light: var(--color-white);
+  --color-foreground-dark: var(--color-black);
+
+  --color-background: var(--color-white);
+  --color-background-light: var(--color-white);
+
+  --color-primary: #42b983;
+  --color-primary-light: #68c79c;
+  --color-primary-dark: #359469;
+  --color-primary-darker: #286f4f;
+}
+
+[theme='dark'] {
+  --color-foreground: var(--color-white);
+  --color-background: var(--color-black);
+
+  --color-background-light: var(--color-black);
+  --color-foreground-dark: var(--color-white);
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+h1, h2, h3, h4, h5 {
+  margin: 0;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.bg {
+
+  &-primary {
+    background: var(--color-primary);
+    color: var(--color-foreground-light);
+
+    * {
+      color: var(--color-foreground-light);
+    }
+
+    &-dark {
+      @extend .bg-primary;
+      background: var(--color-primary-dark);
+
+      &er {
+        background: var(--color-primary-darker);
+      }
+    }
+  }
+}
+
+.grid {
+  display: grid;
+
+  &.center {
+    place-items: center;
+  }
+}
